@@ -1211,7 +1211,8 @@ function importarCSV(input){
 function parsearCSV(text){
   // Quitar BOM si hay
   if(text.charCodeAt(0)===0xFEFF) text=text.slice(1);
-  var lineas = text.split(/?
+  var lineas = text.split(/
+?
 /).filter(function(l){ return l.trim(); });
   if(lineas.length < 2) return [];
   var headers = parsearLineaCSV(lineas[0]).map(function(h){ return h.trim().toLowerCase(); });
